@@ -3,23 +3,16 @@
 
 class Speedometer
 {
-    const kmToMiles = [
-        '10' => '6,21',
-        '20' => '12,42',
-    ];
+    const convert = 0.621;
 
-    const milesToKm = [
-        '6,21' => '10',
-        '12,42' => '20',
-    ];
-
-    public static function convertKmToMiles(string $parameter): ?string
+    public static function convertKmToMiles(int $parameter)
     {
-        return array_key_exists($parameter, self::kmToMiles) ? self::kmToMiles[$parameter] : null;
+        $result = $parameter * self::convert;
+        return round($result, 2);
     }
 
-    public static function convertMilesToKm(string $parameter): ?string
+    public static function convertMilesToKm(int $parameter)
     {
-        return array_key_exists($parameter, self::milesToKm) ? self::milesToKm[$parameter] : null;
+        return round($parameter / self::convert);
     }
 }

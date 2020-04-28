@@ -2,6 +2,6 @@
 
 require_once 'Speedometer.php';
 
-echo Speedometer::convertMilesToKm('6,21');
+echo Speedometer::convertKmToMiles(10);
 echo '<br>';
-echo Speedometer::convertKmToMiles('10');
+echo Speedometer::convertMilesToKm(6.21);
